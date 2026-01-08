@@ -21,7 +21,7 @@ A robust and dependency-free Laravel package to convert PDF files to HTML using 
 1.  **Install via Composer**:
 
     ```bash
-    composer require squareetlabs/pdf-to-html
+    composer require squareetlabs/laravel-pdf-to-html
     ```
 
 2.  **Install `poppler-utils`**:
