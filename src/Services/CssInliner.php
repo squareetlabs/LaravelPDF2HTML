@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Squareetlabs\PdfToHtml\Services;
+namespace Squareetlabs\LaravelPdfToHtml\Services;
 
 use DOMDocument;
 use DOMXPath;

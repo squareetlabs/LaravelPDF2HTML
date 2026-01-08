@@ -42,7 +42,7 @@ A robust and dependency-free Laravel package to convert PDF files to HTML using 
 3.  **Publish Configuration (Optional)**:
 
     ```bash
-    php artisan vendor:publish --provider="Squareetlabs\PdfToHtml\PdfToHtmlServiceProvider"
+    php artisan vendor:publish --provider="Squareetlabs\LaravelPdfToHtml\Providers\PdfToHtmlServiceProvider"
     ```
 
 ## Usage
@@ -50,7 +50,7 @@ A robust and dependency-free Laravel package to convert PDF files to HTML using 
 ### Basic Usage
 
 ```php
-use Squareetlabs\PdfToHtml\Pdf;
+use Squareetlabs\LaravelPdfToHtml\Pdf;
 
 try {
     // Create a new instance

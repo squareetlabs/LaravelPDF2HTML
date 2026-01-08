@@ -1,5 +1,5 @@
 {
-  "name": "squareetlabs/pdf-to-html",
+  "name": "squareetlabs/laravel-pdf-to-html",
   "description": "Laravel package to convert PDF to HTML without external dependencies",
   "keywords": [
     "laravel",
@@ -38,18 +38,18 @@
   },
   "autoload": {
     "psr-4": {
-      "Squareetlabs\\PdfToHtml\\": "src/"
+      "Squareetlabs\\LaravelPdfToHtml\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Squareetlabs\\PdfToHtml\\Tests\\": "tests/"
+      "Squareetlabs\\LaravelPdfToHtml\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Squareetlabs\\PdfToHtml\\Providers\\PdfToHtmlServiceProvider"
+        "Squareetlabs\\LaravelPdfToHtml\\Providers\\PdfToHtmlServiceProvider"
       ]
     }
   },

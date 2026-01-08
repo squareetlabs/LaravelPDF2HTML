@@ -1,8 +1,8 @@
 <?php
 
-namespace Squareetlabs\PdfToHtml\Tests;
+namespace Squareetlabs\LaravelPdfToHtml\Tests;
 
-use Squareetlabs\PdfToHtml\Services\CssInliner;
+use Squareetlabs\LaravelPdfToHtml\Services\CssInliner;
 
 class CssInlinerTest extends TestCase
 {

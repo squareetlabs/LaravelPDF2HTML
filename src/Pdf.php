@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Squareetlabs\PdfToHtml;
+namespace Squareetlabs\LaravelPdfToHtml;
 
-use Squareetlabs\PdfToHtml\Support\Base;
-use Squareetlabs\PdfToHtml\Exceptions\BinaryNotFoundException;
-use Squareetlabs\PdfToHtml\Exceptions\PdfNotFoundException;
+use Squareetlabs\LaravelPdfToHtml\Support\Base;
+use Squareetlabs\LaravelPdfToHtml\Exceptions\BinaryNotFoundException;
+use Squareetlabs\LaravelPdfToHtml\Exceptions\PdfNotFoundException;
 
 /**
  * Class Pdf

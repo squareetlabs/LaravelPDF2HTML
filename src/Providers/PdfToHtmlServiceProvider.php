@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Squareetlabs\PdfToHtml\Providers;
+namespace Squareetlabs\LaravelPdfToHtml\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

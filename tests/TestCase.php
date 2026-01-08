@@ -1,9 +1,9 @@
 <?php
 
-namespace Squareetlabs\PdfToHtml\Tests;
+namespace Squareetlabs\LaravelPdfToHtml\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use Squareetlabs\PdfToHtml\Providers\PdfToHtmlServiceProvider;
+use Squareetlabs\LaravelPdfToHtml\Providers\PdfToHtmlServiceProvider;
 
 class TestCase extends Orchestra
 {
