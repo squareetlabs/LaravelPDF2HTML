@@ -1,24 +1,24 @@
 <?php
-declare(strict_types=1);
 
-namespace Squareetlabs\LaravelPdfToHtml\Facades;
+namespace Squareetlabs\LaravelPdfToHtml\Support\Facades;
 
 use Illuminate\Support\Facades\Facade;
+use Squareetlabs\LaravelPdfToHtml\Support\Services\PdfToHtmlService;
 
 /**
  * @method static \Squareetlabs\LaravelPdfToHtml\Support\Pdf load(string $file, array $options = [])
- * 
- * @see \Squareetlabs\LaravelPdfToHtml\Support\Pdf
+ *
+ * @see PdfToHtmlService
  */
 class PdfToHtml extends Facade
 {
     /**
-     * Get the registered name of the component.
+     * Gets the facade name.
      *
      * @return string
      */
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): string
     {
-        return 'pdf-to-html';
+        return PdfToHtmlService::class;
     }
 }

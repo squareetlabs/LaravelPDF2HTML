@@ -1,56 +1,50 @@
 <?php
-declare(strict_types=1);
 
 namespace Squareetlabs\LaravelPdfToHtml;
 
 use Illuminate\Support\ServiceProvider;
-use function Squareetlabs\LaravelPdfToHtml\Providers\config_path;
+use Squareetlabs\LaravelPdfToHtml\Support\Services\PdfToHtmlService;
 
 class PdfToHtmlServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
      */
-    public function register()
+    public function register(): void
     {
-        // Merge config
-        $this->mergeConfigFrom(
-            __DIR__ . '/../config/pdf-to-html.php',
-            'pdf-to-html'
-        );
-
-        // Register the factory as singleton
-        $this->app->singleton('pdf-to-html', function ($app) {
-            return new class {
-                public function load(string $file, array $options = [])
-                {
-                    // Build options from config
-                    $defaultOptions = [
-                        'pdftohtml_path' => config('pdf-to-html.pdftohtml_path'),
-                        'pdfinfo_path' => config('pdf-to-html.pdfinfo_path'),
-                        'outputDir' => config('pdf-to-html.output_dir', ''),
-                        'generate' => config('pdf-to-html.options', []),
-                        'html' => config('pdf-to-html.html', []),
-                    ];
-                    
-                    // Merge with provided options
-                    $mergedOptions = array_replace_recursive($defaultOptions, $options);
-                    
-                    return new \Squareetlabs\LaravelPdfToHtml\Support\Pdf($file, $mergedOptions);
-                }
-            };
-        });
+        $this->mergeConfigFrom(__DIR__ . '/../config/pdf-to-html.php', 'pdf-to-html');
     }
 
     /**
-     * Bootstrap any package services.
+     * Bootstrap any application services.
      */
-    public function boot()
+    public function boot(): void
     {
-        // Publish configuration
+        $this->configurePublishing();
+        $this->registerFacades();
+    }
+
+    /**
+     * Configure publishing for the package.
+     */
+    protected function configurePublishing(): void
+    {
+        if (!$this->app->runningInConsole()) {
+            return;
+        }
+
         $this->publishes([
-            __DIR__ . '/../config/pdf-to-html.php' => config_path('pdf-to-html.php'),
-        ], 'config');
+            __DIR__ . '/../config/pdf-to-html.php' => config_path('pdf-to-html.php')
+        ], 'pdf-to-html-config');
+    }
+
+    /**
+     * Register the facades offered by the application.
+     */
+    protected function registerFacades(): void
+    {
+        $this->app->singleton('pdf-to-html', static function () {
+            return new PdfToHtmlService();
+        });
     }
 }
-?>

@@ -7,18 +7,17 @@ use Squareetlabs\LaravelPdfToHtml\PdfToHtmlServiceProvider;
 
 class TestCase extends Orchestra
 {
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [
             PdfToHtmlServiceProvider::class,
         ];
     }
 
-    protected function getPackageAliases($app)
+    protected function getPackageAliases($app): array
     {
         return [
             'PdfToHtml' => \Squareetlabs\LaravelPdfToHtml\Support\Facades\PdfToHtml::class,
         ];
     }
 }
-?>
