@@ -1,12 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Squareetlabs\LaravelPdfToHtml;
+namespace Squareetlabs\LaravelPdfToHtml\Support;
 
 use DOMDocument;
-use DOMXPath;
 use DOMElement;
-use Squareetlabs\LaravelPdfToHtml\Support\Base;
+use DOMXPath;
 use Squareetlabs\LaravelPdfToHtml\Services\CssInliner;
 
 /**

@@ -49,8 +49,11 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Squareetlabs\\LaravelPdfToHtml\\Providers\\PdfToHtmlServiceProvider"
-      ]
+        "Squareetlabs\\LaravelPdfToHtml\\PdfToHtmlServiceProvider"
+      ],
+      "aliases": {
+        "PdfToHtml": "Squareetlabs\\LaravelPdfToHtml\\Support\\Facades\\PdfToHtml"
+      }
     }
   },
   "minimum-stability": "stable"

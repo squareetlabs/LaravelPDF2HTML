@@ -1,9 +1,8 @@
 <?php
 declare(strict_types=1);
 
-namespace Squareetlabs\LaravelPdfToHtml;
+namespace Squareetlabs\LaravelPdfToHtml\Support;
 
-use Squareetlabs\LaravelPdfToHtml\Support\Base;
 use Squareetlabs\LaravelPdfToHtml\Exceptions\BinaryNotFoundException;
 use Squareetlabs\LaravelPdfToHtml\Exceptions\PdfNotFoundException;
 
@@ -279,7 +278,7 @@ class Pdf extends Base
      */
     public function getCommand(): string
     {
-        // Force no frames if multiple pages unless specified otherwise, 
+        // Force no frames if multiple pages unless specified otherwise,
         // but typically we want raw HTML pages to parse.
         if ($this->countPages() > 1) {
             // The original code forced noFrames = false (meaning frames are generated?)

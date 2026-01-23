@@ -3,7 +3,7 @@
 namespace Squareetlabs\LaravelPdfToHtml\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use Squareetlabs\LaravelPdfToHtml\Providers\PdfToHtmlServiceProvider;
+use Squareetlabs\LaravelPdfToHtml\PdfToHtmlServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -11,6 +11,13 @@ class TestCase extends Orchestra
     {
         return [
             PdfToHtmlServiceProvider::class,
+        ];
+    }
+
+    protected function getPackageAliases($app)
+    {
+        return [
+            'PdfToHtml' => \Squareetlabs\LaravelPdfToHtml\Support\Facades\PdfToHtml::class,
         ];
     }
 }

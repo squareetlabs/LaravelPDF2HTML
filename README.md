@@ -47,10 +47,35 @@ A robust and dependency-free Laravel package to convert PDF files to HTML using 
 
 ## Usage
 
-### Basic Usage
+### Using Facade (Recommended)
 
 ```php
-use Squareetlabs\LaravelPdfToHtml\Pdf;
+use PdfToHtml;
+
+try {
+    // Load a PDF file using the facade
+    $pdf = PdfToHtml::load('/path/to/document.pdf');
+    
+    // Get HTML content
+    $html = $pdf->getHtml();
+    
+    // Get all pages content as an array
+    $pages = $html->getAllPages();
+    
+    // Get specific page
+    $page1 = $html->getPage(1);
+    
+    echo $page1;
+    
+} catch (\Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
+```
+
+### Using Direct Class Instantiation
+
+```php
+use Squareetlabs\LaravelPdfToHtml\Support\Pdf;
 
 try {
     // Create a new instance
@@ -74,7 +99,7 @@ try {
 
 ### Advanced Options
 
-You can pass options to the constructor to customize the behavior:
+You can pass options to customize the behavior:
 
 ```php
 $options = [
@@ -95,6 +120,10 @@ $options = [
     'clearAfter' => true,           // Clear temp files after processing
 ];
 
+// Using Facade
+$pdf = PdfToHtml::load('/path/to/document.pdf', $options);
+
+// Or using direct instantiation
 $pdf = new Pdf('/path/to/document.pdf', $options);
 ```
 

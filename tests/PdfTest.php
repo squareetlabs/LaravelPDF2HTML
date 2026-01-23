@@ -2,8 +2,8 @@
 
 namespace Squareetlabs\LaravelPdfToHtml\Tests;
 
-use Squareetlabs\LaravelPdfToHtml\Pdf;
 use Squareetlabs\LaravelPdfToHtml\Exceptions\PdfNotFoundException;
+use Squareetlabs\LaravelPdfToHtml\Support\Pdf;
 
 class PdfTest extends TestCase
 {
